@@ -624,7 +624,7 @@ function draw(snapshot) {
     statusEl.textContent = "";
   } else {
     statusEl.hidden = false;
-    const title = bitmapTextHtml(snapshot.statusText, "white", 2);
+    const title = bitmapTextHtml(snapshot.statusText, "white", 1);
     const controls = bitmapTextHtml(snapshot.strings.controls, "white", 1);
     statusEl.innerHTML = `<div class="status-card"><h2>${title}</h2><p>${controls}</p></div>`;
   }
@@ -678,20 +678,17 @@ function draw(snapshot) {
 
 function drawReadyBanner(snapshot, colors) {
   const text = snapshot.strings.getReady.toUpperCase();
-  const scale = 2;
-  const width = measureBitmapText(text, "white", scale);
-  ctx.save();
-  ctx.fillStyle = "rgba(0, 0, 0, 0.55)";
-  ctx.fillRect(0, LOGICAL_H / 2 - 60, LOGICAL_W, 120);
+  const width = measureBitmapText(text, "lime", 1);
+  // The original shows Get Ready in lime at the normal glyph size, with no
+  // panel behind it.
   drawBitmapText(
     text,
-    (LOGICAL_W - width) / 2,
-    LOGICAL_H / 2 - lineHeightFor("white") * scale / 2,
-    "white",
-    scale,
+    Math.floor((LOGICAL_W - width) / 2),
+    260,
+    "lime",
+    1,
     colors,
   );
-  ctx.restore();
 }
 
 function drawTimeBar(snapshot, x, y, colors) {

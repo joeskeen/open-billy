@@ -17,20 +17,20 @@ owner has actually accepted.
 
 - [x] HUD sits at the top of the screen — certified 2026-11-27
 - [ ] World name is shown under the game screen — current placement is a debug convenience only; needs a spec grilling before certification
-- [ ] Time is a progress bar, never a numeric countdown — bar is correct; alarm clock now resets to the level start value, awaiting re-test
-- [ ] Score uses the original colourful digit art — demo + `?lab=hud` seven/eight-digit score; awaiting certification
+- [x] Time is a progress bar, never a numeric countdown — certified 2026-11-27
+- [x] Score uses the original colourful digit art — certified 2026-11-27
 - [x] Score keeps a fixed right edge, about one heart slot before the ten-heart group — certified 2026-11-26
-- [ ] Lives use animated hearts, 10 or fewer; above 10 show one heart plus "xN" (e.g. ❤x17), up to 3 digits — lab caps raised to 999; awaiting test
-- [ ] Inventory uses native item icons, fixed 40 px slots — pitch reworked to match the original (consumables 48/28/52, permanents 35, P +6 px up, counts +3 px right); awaiting re-check
+- [x] Lives use animated hearts, 10 or fewer; above 10 show one heart plus "xN" (e.g. ❤x17), up to 3 digits — certified 2026-11-27
+- [x] Inventory uses native item icons in fixed slots — certified 2026-11-27
 - [x] Inventory counts are outlined and readable — certified 2026-11-27
-- [ ] Inventory order is ladder, ball, rainbow, racket, glove, shoe, ring, dig tool — implemented, awaiting certification
-- [ ] Dig-tool slot shows Bomb → Jackhammer → Pickaxe correctly — implemented, awaiting certification
-- [ ] **P** badge appears only on items made Permanent by the Arcane Book — implemented, awaiting certification
-- [ ] Top adornments appear on Jungle and Construction only — implemented, awaiting certification
-- [ ] Cave, Lagoon and Egypt have no top adornment — implemented, awaiting certification
-- [ ] Bottom platform is only about half visible — implemented, awaiting certification
-- [ ] All images use the same 1:1 scale relative to the background — implemented, awaiting certification
-- [ ] Original ALL16 bitmap font used for HUD, status card and world labels — implemented, awaiting certification
+- [x] Inventory order is ladder, ball, rainbow, racket, glove, shoe, ring, dig tool — certified 2026-11-27
+- [x] Dig-tool slot shows Bomb → Jackhammer → Pickaxe correctly — certified 2026-11-27
+- [x] **P** badge appears only on items made Permanent by the Arcane Book — certified 2026-11-27
+- [x] Top adornments appear on Jungle and Construction only — certified 2026-11-27
+- [x] Cave, Lagoon and Egypt have no top adornment — certified 2026-11-27
+- [x] Bottom platform is only about half visible — certified 2026-11-27
+- [x] All images use the same 1:1 scale relative to the background — certified 2026-11-27
+- [x] Original ALL16 bitmap font used for HUD, status card and world labels — certified 2026-11-27
 
 ## Billy movement and animation
 
@@ -136,3 +136,15 @@ owner has actually accepted.
 | 2026-11-26 | Score right anchor, digit overlap and vertical offsets | owner |
 | 2026-11-27 | Inventory counts (overlap and per-item alignment) | owner |
 | 2026-11-27 | HUD at the top of the screen | owner |
+| 2026-11-27 | Time is a progress bar (alarm clock refill) | owner |
+| 2026-11-27 | Score colourful digit art | owner |
+| 2026-11-27 | Animated hearts and three-digit overflow | owner |
+| 2026-11-27 | Inventory native icons in fixed slots | owner |
+| 2026-11-27 | Inventory order | owner |
+| 2026-11-27 | Dig-tool slot order (Bomb, Jackhammer, Pickaxe) | owner |
+| 2026-11-27 | P badge only for Arcane Book Permanents | owner |
+| 2026-11-27 | Top adornments on Jungle and Construction | owner |
+| 2026-11-27 | No adornments on Cave, Lagoon or Egypt | owner |
+| 2026-11-27 | Bottom platform half visible | owner |
+| 2026-11-27 | All art shares the background 1:1 scale | owner |
+| 2026-11-27 | ALL16 bitmap font at designed size | owner |
