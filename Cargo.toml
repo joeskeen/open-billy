@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+members = [
+  "billy-core",
+  "billy-config",
+  "billy-assets",
+  "billy-web",
+  "billy-native",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+rust-version = "1.85"
+repository = "https://github.com/your-org/open-billy"
+authors = ["Open Billy contributors"]
+
+[workspace.dependencies]
+billy-core = { path = "billy-core" }
+billy-config = { path = "billy-config" }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+
+[profile.release.package.billy-web]
+opt-level = "s"

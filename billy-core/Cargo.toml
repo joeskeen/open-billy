@@ -1,0 +1,12 @@
+[package]
+name = "billy-core"
+description = "Pure deterministic simulation and .K level codec for Open Billy"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }

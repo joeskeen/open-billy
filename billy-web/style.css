@@ -1,0 +1,355 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b0e12;
+  --panel: #151b23;
+  --panel-2: #1d2631;
+  --ink: #e8f0f7;
+  --muted: #9fb0c0;
+  --accent: #f2c14e;
+  --accent-2: #ef6f4f;
+  --green: #7bd88f;
+  --border: #2a3745;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges; /* Fallback for older browsers */
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at 20% 0%, #1b2a38 0%, transparent 45%),
+    radial-gradient(circle at 90% 10%, #2a1d16 0%, transparent 35%),
+    var(--bg);
+  color: var(--ink);
+  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+#app {
+  width: min(1600px, 100%);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, #1c2530, #121820);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #201406;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  font-size: 18px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(18px, 2.2vw, 28px);
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.controls {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+.field {
+  display: grid;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+select,
+button,
+.file-button {
+  font: inherit;
+}
+
+select {
+  min-width: 120px;
+  padding: 8px 10px;
+  color: var(--ink);
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.button,
+.file-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 14px;
+  color: #1b1305;
+  background: linear-gradient(180deg, #f6d37a, #e9b83f);
+  border: 1px solid #b98a23;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 0 #8a6418;
+}
+
+.button:hover,
+.file-button:hover {
+  filter: brightness(1.06);
+}
+
+.button:active,
+.file-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 #8a6418;
+}
+
+.file-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.file-button input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.stage-wrap {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #05080b;
+  box-shadow: var(--shadow);
+}
+
+canvas {
+  display: block;
+  /* Sized by fitCanvas() to an integer multiple of 800×600. */
+  width: 800px;
+  height: 600px;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  background: #05080b;
+}
+
+.status {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(4, 8, 12, 0.62);
+  backdrop-filter: blur(2px);
+}
+
+/* The author `display: grid` above beats the UA [hidden] rule, so the
+   overlay would otherwise blur/darken the canvas during play. */
+.status[hidden] {
+  display: none;
+}
+
+.status-card {
+  max-width: 92%;
+  padding: 22px 30px;
+  text-align: center;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #22303d, #141c25);
+  border: 1px solid #435669;
+  box-shadow: var(--shadow);
+}
+
+.status-card .bitmap-text {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.status-card h2 {
+  margin: 0 0 6px;
+  font-size: clamp(20px, 4vw, 38px);
+}
+
+.status-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.bitmap-text {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 1px;
+  vertical-align: middle;
+}
+
+.bitmap-glyph {
+  display: inline-flex;
+  align-items: flex-end;
+}
+
+.bitmap-text img {
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+.bitmap-fallback {
+  font: 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.bitmap-space {
+  display: inline-block;
+  height: 1em;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.stat {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  background: linear-gradient(180deg, #17202a, #11171e);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.stat strong {
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat.wide strong {
+  font-size: 14px;
+}
+
+.touch {
+  display: none;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.touch button {
+  min-height: 54px;
+  color: var(--ink);
+  background: linear-gradient(180deg, #263442, #18212b);
+  border: 1px solid #3b4d60;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 800;
+  touch-action: none;
+  user-select: none;
+}
+
+.touch button.active {
+  background: linear-gradient(180deg, #3b536a, #243444);
+  border-color: var(--accent);
+}
+
+.note {
+  margin: 14px 2px 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.message {
+  min-height: 1.4em;
+  margin: 8px 2px 0;
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.build {
+  margin: 2px 2px 0;
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  opacity: 0.75;
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 10px;
+  }
+
+  .topbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .controls {
+    justify-content: start;
+  }
+
+  .hud {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stat.wide {
+    grid-column: span 1;
+  }
+
+  .touch {
+    display: grid;
+  }
+}

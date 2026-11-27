@@ -1,0 +1,26 @@
+id = "cave"
+labels = { en = "Cave", da = "Hulen", eo = "Kaverno" }
+tokens = [
+  "crate", "dynamite", "fade", "ghost", "hulbonus", "lamp", "lobesko",
+  "luftbor", "pick", "portal", "regnbue", "rock", "thrusign", "xtratid",
+]
+monsters = ["dynamite", "lamp", "pick", "ghost", "rock", "fade"]
+
+[colors]
+sky = "#100f18"
+platform = "#4a4058"
+platform_edge = "#8f7fae"
+ladder = "#bea5dc"
+hole = "#000000b4"
+player = "#3d6fb6"
+hazard = "#eb6446"
+collectible = "#f2c14e"
+portal = "#6ee39b"
+text = "#e8f0f7"
+[tiles]
+platform_odd = "assets/cave/platform-a.png"
+platform_even = "assets/cave/platform-b.png"
+ladder = "assets/cave/ladder.png"
+background = "assets/cave/background.png"
+[physics]
+# move_ticks = 4

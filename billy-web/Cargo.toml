@@ -1,0 +1,18 @@
+[package]
+name = "billy-web"
+description = "WebAssembly browser shell for Open Billy"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+billy-core.workspace = true
+billy-config.workspace = true
+serde_json = "1"
+wasm-bindgen = "0.2"

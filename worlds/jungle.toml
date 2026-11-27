@@ -1,0 +1,31 @@
+id = "jungle"
+labels = { en = "Jungle", da = "Junglen", eo = "Ĝangalo" }
+tokens = [
+  "ananas", "banana", "bi", "bombe", "coconut", "crate", "diamant",
+  "gronpotion", "hemmeligivaeg", "hulbonus", "lobesko", "log", "portal",
+  "pumpkin", "regnbue", "rodpotion", "tennisbold", "tordensky",
+  "tryllebog", "tryllestav", "xtraliv", "xtratid",
+]
+monsters = ["banana", "pumpkin", "ananas", "coconut", "log", "bi"]
+
+[colors]
+sky = "#0a1a12"
+platform = "#6b4a2a"
+platform_edge = "#b07c3e"
+ladder = "#d2aa5a"
+hole = "#000000b4"
+player = "#3d6fb6"
+hazard = "#eb6446"
+collectible = "#f2c14e"
+portal = "#6ee39b"
+text = "#e8f0f7"
+[tiles]
+platform_odd = "assets/jungle/platform-a.png"
+platform_even = "assets/jungle/platform-b.png"
+ladder = "assets/jungle/ladder.png"
+background = "assets/jungle/background.png"
+top_adornment = "assets/jungle/adornment.png"
+[physics]
+# move_ticks = 4
+# fall_ticks = 4
+# dig_cooldown_ticks = 12

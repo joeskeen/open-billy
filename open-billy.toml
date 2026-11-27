@@ -1,0 +1,80 @@
+# Open Billy project configuration
+#
+# This file is the default for both shells.  Change a world, its palette, its
+# asset pack, or the simulation timings without recompiling.  Worlds are not an
+# enum: add another [[worlds]] table and it becomes playable as soon as a level
+# uses `bane:verden=<id>`.
+#
+# Code identifiers are English.  The original game's Danish token names and .K
+# attribute keys stay unchanged because they are file-format data.
+
+global_tokens = [
+  "bane",
+  "bombe",
+  "crate",
+  "diamant",
+  "hemmeligivaeg",
+  "hulbonus",
+  "krafthandske",
+  "lobesko",
+  "luftbor",
+  "portal",
+  "regnbue",
+  "ring",
+  "tryllebog",
+  "xtraliv",
+]
+
+
+worlds = ["worlds/jungle.toml", "worlds/construction.toml", "worlds/cave.toml", "worlds/water.toml", "worlds/egypt.toml"]
+
+[game]
+title = "Open Billy"
+subtitle = "unofficial fan remake"
+version = "0.1.0"
+default_world = "jungle"
+default_locale = "en"
+
+[simulation]
+tick_hz = 60
+move_ticks = 8
+fall_ticks = 4
+climb_ticks = 48
+monster_move_ticks = 30
+dig_cooldown_ticks = 12
+pause_pickup_ticks = 18
+magic_ladder_ticks = 180
+extra_time_ticks = 1800
+default_time_seconds = 120.0
+lives = 3
+
+[simulation.points]
+prop = 10
+power_up = 25
+weapon = 15
+feature = 25
+monster = 0
+crate = 50
+diamond = 100
+extra_life = 25
+
+# ---------------------------------------------------------------------------
+# Tokens
+# ---------------------------------------------------------------------------
+# Built-in tokens are always available.  Add a [[tokens]] table to override a
+# token's behaviour, points, default attributes or sprite path:
+#
+# [[tokens]]
+# id = "crate"
+# kind = "feature"
+# anchor = "pos"
+# behavior = "collectible"
+# points = 75
+# sprite = "assets/sprites/crate.png"
+# [tokens.defaults]
+# indhold = "wzz|fuu"
+# tid = "30"
+
+# ---------------------------------------------------------------------------
+# Worlds
+# ---------------------------------------------------------------------------

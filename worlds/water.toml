@@ -1,0 +1,27 @@
+id = "water"
+labels = { en = "Lagoon", da = "Lagunen", eo = "Laguno" }
+tokens = [
+  "bundboble", "chest", "conkylie", "crate", "diamant", "fishes",
+  "hemmeligivaeg", "hulbonus", "lobesko", "luftbor", "musling", "portal",
+  "rodpotion", "star", "tennisbold", "tire",
+]
+monsters = ["conkylie", "musling", "star", "chest", "tire", "fishes"]
+
+[colors]
+sky = "#041a24"
+platform = "#2d6475"
+platform_edge = "#65c7d8"
+ladder = "#78dce6"
+hole = "#000000b4"
+player = "#3d6fb6"
+hazard = "#eb6446"
+collectible = "#f2c14e"
+portal = "#6ee39b"
+text = "#e8f0f7"
+[tiles]
+platform_odd = "assets/water/platform-a.png"
+platform_even = "assets/water/platform-b.png"
+ladder = "assets/water/ladder.png"
+background = "assets/water/background.png"
+[physics]
+# move_ticks = 4

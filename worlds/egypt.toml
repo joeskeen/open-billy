@@ -1,0 +1,27 @@
+id = "egypt"
+labels = { en = "Egypt", da = "Egypten", eo = "Egiptujo" }
+tokens = [
+  "bombe", "crate", "firehead", "gronpotion", "hemmeligivaeg", "hulbonus",
+  "portal", "pyramid", "sarkofag", "teabag", "tennisbold", "torch",
+  "ulmeild", "urn", "xtraliv",
+]
+monsters = ["urn", "sarkofag", "torch", "teabag", "pyramid", "ulmeild", "firehead"]
+
+[colors]
+sky = "#1e1408"
+platform = "#8a5a2b"
+platform_edge = "#e0b45c"
+ladder = "#f0c86e"
+hole = "#000000b4"
+player = "#3d6fb6"
+hazard = "#eb6446"
+collectible = "#f2c14e"
+portal = "#6ee39b"
+text = "#e8f0f7"
+[tiles]
+platform_odd = "assets/egypt/platform-a.png"
+platform_even = "assets/egypt/platform-b.png"
+ladder = "assets/egypt/ladder.png"
+background = "assets/egypt/background.png"
+[physics]
+# move_ticks = 4

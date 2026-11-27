@@ -1,0 +1,30 @@
+id = "construction"
+labels = { en = "Construction", da = "Konstruktionen", eo = "Konstruado" }
+tokens = [
+  "beacon", "bombe", "cap", "crate", "crusher", "diamant", "elevator",
+  "hammer", "hemmeligivaeg", "hulbonus", "krafthandske", "lobesko",
+  "luftbor", "portal", "saw", "spraycan", "tryllestav", "xtraliv",
+  "xtratid",
+]
+monsters = ["beacon", "spraycan", "saw", "hammer", "cap", "crusher"]
+
+[colors]
+sky = "#141820"
+platform = "#555f6b"
+platform_edge = "#98a4b3"
+ladder = "#d6be78"
+hole = "#000000b4"
+player = "#3d6fb6"
+hazard = "#eb6446"
+collectible = "#f2c14e"
+portal = "#6ee39b"
+text = "#e8f0f7"
+[tiles]
+platform_odd = "assets/construction/platform-a.png"
+platform_even = "assets/construction/platform-b.png"
+ladder = "assets/construction/ladder.png"
+background = "assets/construction/background.png"
+top_adornment = "assets/construction/adornment.png"
+[physics]
+# Per-world timings override [simulation] when present.
+# move_ticks = 5

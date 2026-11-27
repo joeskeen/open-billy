@@ -1,0 +1,14 @@
+/target
+**/dist/
+**/*.rs.bk
+.DS_Store
+/game
+/assets/extracted
+/levels
+billy-web/assets/
+billy-web/pkg/
+*.log
+*.tmp
+*.swp
+.env
+/screenshots/
